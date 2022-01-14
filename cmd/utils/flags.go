@@ -1605,14 +1605,16 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *ethconfig.Config) {
 			cfg.EthDiscoveryURLs = SplitAndTrim(urls)
 		}
 	}
+
+	//set mainnet overrides by default
+	if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
+		cfg.NetworkId = 4946874
+	}
+	cfg.Genesis = core.DefaultGenesisBlock()
+	SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
+
 	// Override any default configs for hard coded networks.
 	switch {
-	case ctx.GlobalBool(MainnetFlag.Name):
-		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 4946874
-		}
-		cfg.Genesis = core.DefaultGenesisBlock()
-		SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
 	case ctx.GlobalBool(RopstenFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
 			cfg.NetworkId = 3
