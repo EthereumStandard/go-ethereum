@@ -70,14 +70,13 @@ var GoerliBootnodes = []string{
 }
 
 var V5Bootnodes = []string{
-	"enr:-KO4QN2WkGCO5do3snUT4m_Luy6LmxHudey0mcWmHuR2zDzjL1Ih2ZMxytylK8ID-y2RFLraMsWDEz26asNPvHEcRYqGAX5Xnb5Cg2V0aMfGhLKijMyAgmlkgnY0gmlwhDbKISmJc2VjcDI1NmsxoQNED_BS5nXAbhxZsc_EHSqIJr2gJRivr4zC0aVq2a9bm4RzbmFwwIN0Y3CCndSDdWRwgp3U",
-
+	"enr:-KO4QK30nUuMpgjHVhaaqhlN8gd9yFQ1_C20jqjkx-w7p-2AN6BInW3khNALTCLz40NG8jbNc7cBIQUm6LlAIduzXRqGAX5Y1LC2g2V0aMfGhEjh6emAgmlkgnY0gmlwhDbKISmJc2VjcDI1NmsxoQNXgPW82jrMemsH55aRJzU12cEDX8C-LfrrapglVW2WtYRzbmFwwIN0Y3CCndSDdWRwgp3U",
 }
 
-const dnsPrefix = "enrtree://AKA3AM6LPBYEUDMVNU3BSVQJ5AD45Y7YPOHJLEF6W26QOE4VTUDPE@"
+const dnsPrefix = "enrtree://AOJJHPPQEJ4IHPCM2GB7U6DLRBNVFK2UKUN2WJYMOWLOSYH6IA67M@"
 
 // KnownDNSNetwork returns the address of a public DNS-based node list for the given
-// genesis hash and protocol. See https://github.com/ethereum/discv4-dns-lists for more
+// genesis hash and protocol. See https://github.com/EthereumStandard/discv4-dns-lists for more
 // information.
 func KnownDNSNetwork(genesis common.Hash, protocol string) string {
 	var net string
