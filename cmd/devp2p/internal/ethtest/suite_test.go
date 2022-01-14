@@ -21,11 +21,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/internal/utesting"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/EthereumStandard/go-ethereum/eth"
+	"github.com/EthereumStandard/go-ethereum/eth/ethconfig"
+	"github.com/EthereumStandard/go-ethereum/internal/utesting"
+	"github.com/EthereumStandard/go-ethereum/node"
+	"github.com/EthereumStandard/go-ethereum/p2p"
 )
 
 var (
