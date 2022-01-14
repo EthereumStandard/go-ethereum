@@ -364,7 +364,7 @@ func DefaultGenesisBlock() *Genesis {
 		Nonce:      76834692,
 		ExtraData:  []byte(""),
 		GasLimit:   3141592,
-		Difficulty: big.NewInt(131072),
+		Difficulty: big.NewInt(1),
 		Alloc:      map[common.Address]GenesisAccount{},
 	}
 }
