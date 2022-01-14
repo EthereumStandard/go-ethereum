@@ -472,7 +472,7 @@ func (c *ChainConfig) IsLondon(num *big.Int) bool {
 
 // IsArrowGlacier returns whether num is either equal to the Arrow Glacier (EIP-4345) fork block or greater.
 func (c *ChainConfig) IsArrowGlacier(num *big.Int) bool {
-	return isForked(c.ArrowGlacierBlock, num)
+	return false
 }
 
 // IsTerminalPoWBlock returns whether the given block is the last block of PoW stage.
