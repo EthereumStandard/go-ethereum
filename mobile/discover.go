@@ -50,9 +50,9 @@ type Enode struct {
 //
 // In the following example, the node URL describes
 // a node with IP address 10.3.58.6, TCP listening port 40404
-// and UDP discovery port 30301.
+// and UDP discovery port 40401.
 //
-//    enode://<hex node id>@10.3.58.6:40404?discport=30301
+//    enode://<hex node id>@10.3.58.6:40404?discport=40401
 func NewEnode(rawurl string) (*Enode, error) {
 	node, err := enode.Parse(enode.ValidSchemes, rawurl)
 	if err != nil {
