@@ -4,8 +4,8 @@ Official Golang implementation of the Ethereum protocol.
 
 [![API Reference](
 https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f676f6c616e672f6764646f3f7374617475732e737667
-)](https://pkg.go.dev/github.com/ethereum/go-ethereum?tab=doc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ethereum/go-ethereum)](https://goreportcard.com/report/github.com/ethereum/go-ethereum)
+)](https://pkg.go.dev/github.com/EthereumStandard/go-ethereum?tab=doc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/EthereumStandard/go-ethereum)](https://goreportcard.com/report/github.com/EthereumStandard/go-ethereum)
 [![Travis](https://travis-ci.com/ethereum/go-ethereum.svg?branch=master)](https://travis-ci.com/ethereum/go-ethereum)
 [![Discord](https://img.shields.io/badge/discord-join%20chat-blue.svg)](https://discord.gg/nthXNEv)
 
@@ -68,7 +68,7 @@ This command will:
    causing it to download more data in exchange for avoiding processing the entire history
    of the Ethereum network, which is very CPU intensive.
  * Start up `geth`'s built-in interactive [JavaScript console](https://geth.ethereum.org/docs/interface/javascript-console),
-   (via the trailing `console` subcommand) through which you can interact using [`web3` methods](https://github.com/ChainSafe/web3.js/blob/0.20.7/DOCUMENTATION.md) 
+   (via the trailing `console` subcommand) through which you can interact using [`web3` methods](https://github.com/ChainSafe/web3.js/blob/0.20.7/DOCUMENTATION.md)
    (note: the `web3` version bundled within `geth` is very old, and not up to date with official docs),
    as well as `geth`'s own [management APIs](https://geth.ethereum.org/docs/rpc/server).
    This tool is optional and if you leave it out you can always attach to an already running
@@ -155,7 +155,7 @@ Docker:
 
 ```shell
 docker run -d --name ethereum-node -v /Users/alice/ethereum:/root \
-           -p 8545:8545 -p 30303:30303 \
+           -p 8545:8545 -p 40404:40404 \
            ethereum/client-go
 ```
 

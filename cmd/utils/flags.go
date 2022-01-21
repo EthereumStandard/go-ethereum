@@ -33,40 +33,40 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/fdlimit"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/consensus/clique"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/catalyst"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/eth/gasprice"
-	"github.com/ethereum/go-ethereum/eth/tracers"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/ethstats"
-	"github.com/ethereum/go-ethereum/graphql"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/les"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/metrics/exp"
-	"github.com/ethereum/go-ethereum/metrics/influxdb"
-	"github.com/ethereum/go-ethereum/miner"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/p2p/netutil"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/EthereumStandard/go-ethereum/accounts"
+	"github.com/EthereumStandard/go-ethereum/accounts/keystore"
+	"github.com/EthereumStandard/go-ethereum/common"
+	"github.com/EthereumStandard/go-ethereum/common/fdlimit"
+	"github.com/EthereumStandard/go-ethereum/consensus"
+	"github.com/EthereumStandard/go-ethereum/consensus/clique"
+	"github.com/EthereumStandard/go-ethereum/consensus/ethash"
+	"github.com/EthereumStandard/go-ethereum/core"
+	"github.com/EthereumStandard/go-ethereum/core/rawdb"
+	"github.com/EthereumStandard/go-ethereum/core/vm"
+	"github.com/EthereumStandard/go-ethereum/crypto"
+	"github.com/EthereumStandard/go-ethereum/eth"
+	"github.com/EthereumStandard/go-ethereum/eth/catalyst"
+	"github.com/EthereumStandard/go-ethereum/eth/downloader"
+	"github.com/EthereumStandard/go-ethereum/eth/ethconfig"
+	"github.com/EthereumStandard/go-ethereum/eth/gasprice"
+	"github.com/EthereumStandard/go-ethereum/eth/tracers"
+	"github.com/EthereumStandard/go-ethereum/ethdb"
+	"github.com/EthereumStandard/go-ethereum/ethstats"
+	"github.com/EthereumStandard/go-ethereum/graphql"
+	"github.com/EthereumStandard/go-ethereum/internal/ethapi"
+	"github.com/EthereumStandard/go-ethereum/internal/flags"
+	"github.com/EthereumStandard/go-ethereum/les"
+	"github.com/EthereumStandard/go-ethereum/log"
+	"github.com/EthereumStandard/go-ethereum/metrics"
+	"github.com/EthereumStandard/go-ethereum/metrics/exp"
+	"github.com/EthereumStandard/go-ethereum/metrics/influxdb"
+	"github.com/EthereumStandard/go-ethereum/miner"
+	"github.com/EthereumStandard/go-ethereum/node"
+	"github.com/EthereumStandard/go-ethereum/p2p"
+	"github.com/EthereumStandard/go-ethereum/p2p/enode"
+	"github.com/EthereumStandard/go-ethereum/p2p/nat"
+	"github.com/EthereumStandard/go-ethereum/p2p/netutil"
+	"github.com/EthereumStandard/go-ethereum/params"
 	pcsclite "github.com/gballet/go-libpcsclite"
 	gopsutil "github.com/shirou/gopsutil/mem"
 	"gopkg.in/urfave/cli.v1"
@@ -643,7 +643,7 @@ var (
 	ListenPortFlag = cli.IntFlag{
 		Name:  "port",
 		Usage: "Network listening port",
-		Value: 30303,
+		Value: 40404,
 	}
 	BootnodesFlag = cli.StringFlag{
 		Name:  "bootnodes",
@@ -1605,14 +1605,16 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *ethconfig.Config) {
 			cfg.EthDiscoveryURLs = SplitAndTrim(urls)
 		}
 	}
+
+	//set mainnet overrides by default
+	if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
+		cfg.NetworkId = 36
+	}
+	cfg.Genesis = core.DefaultGenesisBlock()
+	SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
+
 	// Override any default configs for hard coded networks.
 	switch {
-	case ctx.GlobalBool(MainnetFlag.Name):
-		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 1
-		}
-		cfg.Genesis = core.DefaultGenesisBlock()
-		SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
 	case ctx.GlobalBool(RopstenFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
 			cfg.NetworkId = 3
@@ -1685,7 +1687,7 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *ethconfig.Config) {
 			cfg.Miner.GasPrice = big.NewInt(1)
 		}
 	default:
-		if cfg.NetworkId == 1 {
+		if cfg.NetworkId == 36 {
 			SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
 		}
 	}

@@ -25,24 +25,24 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/console/prompt"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/node"
+	"github.com/EthereumStandard/go-ethereum/accounts"
+	"github.com/EthereumStandard/go-ethereum/accounts/keystore"
+	"github.com/EthereumStandard/go-ethereum/cmd/utils"
+	"github.com/EthereumStandard/go-ethereum/common"
+	"github.com/EthereumStandard/go-ethereum/console/prompt"
+	"github.com/EthereumStandard/go-ethereum/eth"
+	"github.com/EthereumStandard/go-ethereum/eth/downloader"
+	"github.com/EthereumStandard/go-ethereum/ethclient"
+	"github.com/EthereumStandard/go-ethereum/internal/debug"
+	"github.com/EthereumStandard/go-ethereum/internal/ethapi"
+	"github.com/EthereumStandard/go-ethereum/internal/flags"
+	"github.com/EthereumStandard/go-ethereum/log"
+	"github.com/EthereumStandard/go-ethereum/metrics"
+	"github.com/EthereumStandard/go-ethereum/node"
 
 	// Force-load the tracer engines to trigger registration
-	_ "github.com/ethereum/go-ethereum/eth/tracers/js"
-	_ "github.com/ethereum/go-ethereum/eth/tracers/native"
+	_ "github.com/EthereumStandard/go-ethereum/eth/tracers/js"
+	_ "github.com/EthereumStandard/go-ethereum/eth/tracers/native"
 
 	"gopkg.in/urfave/cli.v1"
 )
@@ -287,7 +287,7 @@ func prepare(ctx *cli.Context) {
 		log.Info("Starting Geth in ephemeral dev mode...")
 
 	case !ctx.GlobalIsSet(utils.NetworkIdFlag.Name):
-		log.Info("Starting Geth on Ethereum mainnet...")
+		log.Info("Starting Geth on EthereumStandard mainnet...")
 	}
 	// If we're a full node on mainnet without --cache specified, bump default cache allowance
 	if ctx.GlobalString(utils.SyncModeFlag.Name) != "light" && !ctx.GlobalIsSet(utils.CacheFlag.Name) && !ctx.GlobalIsSet(utils.NetworkIdFlag.Name) {

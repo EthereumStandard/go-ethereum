@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/EthereumStandard/go-ethereum/common/mclock"
+	"github.com/EthereumStandard/go-ethereum/log"
 )
 
 const (

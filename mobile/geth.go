@@ -24,17 +24,17 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/ethstats"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/les"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/EthereumStandard/go-ethereum/core"
+	"github.com/EthereumStandard/go-ethereum/eth/downloader"
+	"github.com/EthereumStandard/go-ethereum/eth/ethconfig"
+	"github.com/EthereumStandard/go-ethereum/ethclient"
+	"github.com/EthereumStandard/go-ethereum/ethstats"
+	"github.com/EthereumStandard/go-ethereum/internal/debug"
+	"github.com/EthereumStandard/go-ethereum/les"
+	"github.com/EthereumStandard/go-ethereum/node"
+	"github.com/EthereumStandard/go-ethereum/p2p"
+	"github.com/EthereumStandard/go-ethereum/p2p/nat"
+	"github.com/EthereumStandard/go-ethereum/params"
 )
 
 // NodeConfig represents the collection of configuration values to fine tune the Geth
@@ -80,7 +80,7 @@ var defaultNodeConfig = &NodeConfig{
 	BootstrapNodes:        FoundationBootnodes(),
 	MaxPeers:              25,
 	EthereumEnabled:       true,
-	EthereumNetworkID:     1,
+	EthereumNetworkID:     36,
 	EthereumDatabaseCache: 16,
 }
 

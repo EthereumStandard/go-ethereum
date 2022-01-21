@@ -23,11 +23,11 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/EthereumStandard/go-ethereum/common"
+	"github.com/EthereumStandard/go-ethereum/common/math"
+	"github.com/EthereumStandard/go-ethereum/crypto"
+	"github.com/EthereumStandard/go-ethereum/params"
+	"github.com/EthereumStandard/go-ethereum/rlp"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -105,7 +105,7 @@ func TestEIP1559BlockEncoding(t *testing.T) {
 	}}
 	to := common.HexToAddress("095e7baea6a6c7c4c2dfeb977efac326af552d87")
 	txdata := &DynamicFeeTx{
-		ChainID:    big.NewInt(1),
+		ChainID:    big.NewInt(36),
 		Nonce:      0,
 		To:         &to,
 		Gas:        123457,

@@ -22,9 +22,9 @@ import (
 	"io"
 	"sort"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/internal/flags"
+	"github.com/EthereumStandard/go-ethereum/cmd/utils"
+	"github.com/EthereumStandard/go-ethereum/internal/debug"
+	"github.com/EthereumStandard/go-ethereum/internal/flags"
 	"gopkg.in/urfave/cli.v1"
 )
 

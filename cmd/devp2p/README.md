@@ -13,7 +13,7 @@ The `devp2p key ...` command family deals with node key files.
 
 Run `devp2p key generate mynode.key` to create a new node key in the `mynode.key` file.
 
-Run `devp2p key to-enode mynode.key -ip 127.0.0.1 -tcp 30303` to create an enode:// URL
+Run `devp2p key to-enode mynode.key -ip 127.0.0.1 -tcp 40404` to create an enode:// URL
 corresponding to the given node key and address information.
 
 ### Maintaining DNS Discovery Node Lists
@@ -134,7 +134,7 @@ replacing `<enode>` with the enode of the geth node:
  devp2p rlpx eth66-test <enode> cmd/devp2p/internal/ethtest/testdata/chain.rlp cmd/devp2p/internal/ethtest/testdata/genesis.json
 ```
 
-[eth]: https://github.com/ethereum/devp2p/blob/master/caps/eth.md
+[eth]: https://github.com/EthereumStandard/devp2p/blob/master/caps/eth.md
 [dns-tutorial]: https://geth.ethereum.org/docs/developers/dns-discovery-setup
-[discv4]: https://github.com/ethereum/devp2p/tree/master/discv4.md
-[discv5]: https://github.com/ethereum/devp2p/tree/master/discv5/discv5.md
+[discv4]: https://github.com/EthereumStandard/devp2p/tree/master/discv4.md
+[discv5]: https://github.com/EthereumStandard/devp2p/tree/master/discv5/discv5.md
