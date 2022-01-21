@@ -365,7 +365,7 @@ func DefaultGenesisBlock() *Genesis {
 		ExtraData:  []byte(""),
 		GasLimit:   3141592,
 		Difficulty: big.NewInt(131072),
-		Alloc:      map[common.Address]GenesisAccount{},
+		Alloc:      decodePrealloc(mainnetAllocData),
 	}
 }
 
