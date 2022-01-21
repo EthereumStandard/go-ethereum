@@ -1608,7 +1608,7 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *ethconfig.Config) {
 
 	//set mainnet overrides by default
 	if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-		cfg.NetworkId = 4946874
+		cfg.NetworkId = 36
 	}
 	cfg.Genesis = core.DefaultGenesisBlock()
 	SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
@@ -1687,7 +1687,7 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *ethconfig.Config) {
 			cfg.Miner.GasPrice = big.NewInt(1)
 		}
 	default:
-		if cfg.NetworkId == 4946874 {
+		if cfg.NetworkId == 36 {
 			SetDNSDiscoveryDefaults(cfg, params.MainnetGenesisHash)
 		}
 	}

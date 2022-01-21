@@ -436,7 +436,7 @@ Response
       "domain": {
         "name": "Ether Mail",
         "version": "1",
-        "chainId": 4946874,
+        "chainId": 36,
         "verifyingContract": "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC"
       },
       "message": {

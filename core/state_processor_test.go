@@ -214,7 +214,7 @@ func TestStateProcessorErrors(t *testing.T) {
 			db    = rawdb.NewMemoryDatabase()
 			gspec = &Genesis{
 				Config: &params.ChainConfig{
-					ChainID:             big.NewInt(4946874),
+					ChainID:             big.NewInt(36),
 					HomesteadBlock:      big.NewInt(0),
 					EIP150Block:         big.NewInt(0),
 					EIP155Block:         big.NewInt(0),

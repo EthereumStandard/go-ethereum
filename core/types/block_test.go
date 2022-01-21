@@ -105,7 +105,7 @@ func TestEIP1559BlockEncoding(t *testing.T) {
 	}}
 	to := common.HexToAddress("095e7baea6a6c7c4c2dfeb977efac326af552d87")
 	txdata := &DynamicFeeTx{
-		ChainID:    big.NewInt(4946874),
+		ChainID:    big.NewInt(36),
 		Nonce:      0,
 		To:         &to,
 		Gas:        123457,
