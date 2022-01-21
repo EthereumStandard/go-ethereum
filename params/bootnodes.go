@@ -22,7 +22,7 @@ import "github.com/EthereumStandard/go-ethereum/common"
 // the main Ethereum network.
 var MainnetBootnodes = []string{
 	// EthereumStandard Bootnodes
-	"enode://5780f5bcda3acc7a6b07e79691273535d9c1035fc0be2dfaeb6a9825556d96b5ac8104fc7771cf100f34468935a59f3a20b33d4d15231e5927449d5b1e294a15@54.202.33.41:40404",
+	"enode://2608cec0a0e3aa4d66dad6afeea7708b0560019a424778d36ebd9deefd6170187967e74e5607270ff31f3d227a54e634e2e6c1d597b3d73977701611359c4917@54.202.33.41:40404",
 }
 
 // RopstenBootnodes are the enode URLs of the P2P bootstrap nodes running on the
